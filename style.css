@@ -228,6 +228,15 @@ body {
   backdrop-filter: blur(10px);
 }
 .nav-outline:hover { background: rgba(255,255,255,0.15); transform: translateY(-2px); }
+.nav-excel {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.45);
+}
+.nav-excel:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(16, 185, 129, 0.7);
+}
 .nav-icon { font-size: 1.1rem; }
 
 /* ---- LEGAL BAR ---- */
@@ -772,9 +781,169 @@ body {
   .school-identity { text-align: center; }
 }
 @media (max-width: 600px) {
-  .block-box { padding: 22px 18px; }
-  .hero { padding: 48px 0 56px; }
-  .hero-nav { flex-direction: column; align-items: center; }
-  .nav-btn { width: 260px; justify-content: center; }
-  .compare-grid { gap: 16px; }
+/* ---- EXCEL DOWNLOAD SECTION & FLOATING BUTTON ---- */
+.excel-download-section {
+  padding: 40px 0 20px;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
 }
+.excel-download-card {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.15) 0%, rgba(6, 78, 59, 0.35) 100%);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  border-radius: 20px;
+  padding: 32px 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.35), 0 0 40px rgba(16, 185, 129, 0.1);
+}
+.excel-card-left {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  flex: 1;
+}
+.excel-badge-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #10b981, #047857);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34px;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.4);
+  flex-shrink: 0;
+}
+.excel-card-info h3 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.excel-card-info p {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+.excel-features-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 6px;
+}
+.excel-feature-tag {
+  background: rgba(16, 185, 129, 0.2);
+  border: 1px solid rgba(52, 211, 153, 0.4);
+  color: #a7f3d0;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 20px;
+}
+.excel-card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-shrink: 0;
+}
+.btn-download-excel-main {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.05rem;
+  padding: 14px 30px;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 6px 25px rgba(16, 185, 129, 0.5);
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+.btn-download-excel-main:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 32px rgba(16, 185, 129, 0.7);
+  background: linear-gradient(135deg, #34d399 0%, #059669 100%);
+}
+.btn-print-doc {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #e2e8f0;
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 10px 24px;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-print-doc:hover {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+}
+
+/* Floating Excel Download Button */
+.floating-excel-btn {
+  position: fixed;
+  bottom: 30px;
+  left: 30px;
+  background: linear-gradient(135deg, #10b981 0%, #047857 100%);
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  text-decoration: none;
+  box-shadow: 0 6px 25px rgba(16, 185, 129, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.2);
+  z-index: 998;
+  transition: all 0.3s ease;
+}
+.floating-excel-btn:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.75);
+}
+.floating-excel-btn .btn-pulse {
+  width: 10px;
+  height: 10px;
+  background: #a7f3d0;
+  border-radius: 50%;
+  animation: pulse 1.5s infinite;
+}
+
+@media (max-width: 900px) {
+  .excel-download-card {
+    flex-direction: column;
+    text-align: center;
+  }
+  .excel-card-left {
+    flex-direction: column;
+  }
+  .excel-features-row {
+    justify-content: center;
+  }
+  .excel-card-actions {
+    width: 100%;
+  }
+  .btn-download-excel-main, .btn-print-doc {
+    width: 100%;
+  }
+  .floating-excel-btn {
+    bottom: 20px;
+    left: 20px;
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
+}
+
