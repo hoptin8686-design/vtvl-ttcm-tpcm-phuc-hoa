@@ -22,9 +22,10 @@
 - Phải xây dựng **bản mô tả công việc và khung năng lực** riêng
 - Quản lý theo vị trí việc làm, **đánh giá bằng kết quả đầu ra (KPI)**
 
-### 🌐 Xem trực tuyến
-- **GitHub:** https://github.com/thptphuchoa/vtvl-ttcm-tpcm
-- **Vercel:** https://vtvl-ttcm-tpcm-phuc-hoa.vercel.app
+### 🌐 Xem trực tuyến & Triển khai
+- **Trang web trực tuyến (GitHub Pages):** https://hoptin8686-design.github.io/vtvl-ttcm-tpcm-phuc-hoa/
+- **Kho lưu trữ GitHub:** https://github.com/hoptin8686-design/vtvl-ttcm-tpcm-phuc-hoa
+- **Triển khai 1-Click lên Vercel:** [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fhoptin8686-design%2Fvtvl-ttcm-tpcm-phuc-hoa)
 
 ### 📅 Năm học: 2026–2027
 
