@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "name": "vtvl-ttcm-tpcm-phuc-hoa",
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ],
+  "routes": [
+    { "src": "/(.*)", "dest": "/$1" }
+  ]
+}
