@@ -3,7 +3,7 @@ chcp 65001 >nul
 set "PATH=C:\Users\DMX HOA THUAN\AppData\Local\Programs\Git\cmd;C:\Users\DMX HOA THUAN\AppData\Local\Programs\gh\bin;%PATH%"
 set "PROJECT_DIR=d:\Du-an-web\web-vtvl-ttcm-tpcm-phuc-hoa"
 set "GITHUB_REPO=vtvl-ttcm-tpcm-phuc-hoa"
-set "GITHUB_USER=thptphuchoa"
+set "GITHUB_USER=hoptin8686-design"
 
 cd /d "%PROJECT_DIR%"
 
