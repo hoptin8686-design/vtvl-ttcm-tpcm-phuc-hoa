@@ -1,7 +1,7 @@
 /* ==============================================================================
-   app.js – Đề Án Vị Trí Việc Làm Viên Chức Quản Lý – THPT Phục Hòa
-   Căn cứ Nghị định số 232/2026/NĐ-CP & Thông tư 15/2026/TT-BGDĐT
-   Hỗ trợ tương tác 04 Vị trí: Hiệu trưởng, Phó Hiệu trưởng, TTCM, TPCM
+   app.js – Đề Án Vị Trí Việc Làm Viên Chức – THPT Phục Hòa
+   Căn cứ Nghị định số 232/2026/NĐ-CP (Phụ lục I, II, III & IV)
+   Hỗ trợ tương tác trọn bộ 03 Danh mục: Quản lý, Chuyên môn, Hỗ trợ
    ============================================================================== */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, observerOptions);
 
   const animTargets = document.querySelectorAll(
-    '.block-box, .info-card, .task-item, .product-card, .kpi-card, .stat-card, .comp-table-wrap'
+    '.block-box, .info-card, .task-item, .product-card, .kpi-card, .stat-card, .comp-table-wrap, .category-header'
   );
   animTargets.forEach((el, i) => {
     el.classList.add('animate-in');
@@ -55,13 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const downloadBtns = document.querySelectorAll('#btn-excel-hero, #btn-download-excel-banner, #floatingExcelBtn');
   downloadBtns.forEach(btn => {
     btn.addEventListener('click', () => {
-      showToast('✓ Đang tải xuống trọn bộ 07 Sheet Đề án VTVL (.xlsx)...');
+      showToast('✓ Đang tải xuống trọn bộ 07 Sheet Đề án 03 Danh mục VTVL (.xlsx)...');
     });
   });
 
-  // ---- Role Tabs Switcher / Filter ----
+  // ---- Category Tabs Switcher / Filter ----
   const roleTabBtns = document.querySelectorAll('.role-tab-btn[data-filter]');
-  const roleSections = document.querySelectorAll('.role-section');
+  const catBlocks = document.querySelectorAll('.category-block');
 
   roleTabBtns.forEach(btn => {
     btn.addEventListener('click', () => {
@@ -71,26 +71,25 @@ document.addEventListener('DOMContentLoaded', () => {
       const filter = btn.getAttribute('data-filter');
 
       if (filter === 'all') {
-        roleSections.forEach(sec => {
-          sec.style.display = 'block';
+        catBlocks.forEach(blk => {
+          blk.style.display = 'block';
         });
-        showToast('Hiển thị toàn cảnh Đề án 04 Vị trí Quản lý');
+        showToast('Hiển thị toàn cảnh Đề án: Đủ 03 Danh mục VTVL');
       } else {
-        roleSections.forEach(sec => {
-          if (sec.getAttribute('data-role') === filter) {
-            sec.style.display = 'block';
-            sec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        catBlocks.forEach(blk => {
+          if (blk.getAttribute('data-cat') === filter) {
+            blk.style.display = 'block';
+            blk.scrollIntoView({ behavior: 'smooth', block: 'start' });
           } else {
-            sec.style.display = 'none';
+            blk.style.display = 'none';
           }
         });
-        const roleNames = {
-          'ht': '1. Hiệu trưởng (HT-THPT-01)',
-          'pht': '2. Phó Hiệu trưởng (PHT-THPT-01)',
-          'ttcm': '3. Tổ trưởng chuyên môn (TTCM-THPT-01)',
-          'tpcm': '4. Tổ phó chuyên môn (TPCM-THPT-01)'
+        const catNames = {
+          'dm1': 'Danh mục 1: Vị trí Quản lý (Hiệu trưởng, Phó HT, TTCM, TPCM)',
+          'dm2': 'Danh mục 2: Vị trí Chuyên môn (Giáo viên, Thư viện, CNTT)',
+          'dm3': 'Danh mục 3: Vị trí Hỗ trợ (Kế toán, Văn thư, Thiết bị TN, Giáo vụ, Y tế)'
         };
-        showToast(`Đang lọc chi tiết vị trí: ${roleNames[filter] || filter}`);
+        showToast(`Đang lọc: ${catNames[filter] || filter}`);
       }
     });
   });
@@ -102,15 +101,21 @@ document.addEventListener('DOMContentLoaded', () => {
       const query = e.target.value.trim().toLowerCase();
       const taskItems = document.querySelectorAll('.task-item');
       const kpiCards = document.querySelectorAll('.kpi-card');
+      const blockBoxes = document.querySelectorAll('.block-box');
 
       if (!query) {
-        taskItems.forEach(item => item.style.display = 'flex');
+        catBlocks.forEach(blk => blk.style.display = 'block');
+        taskItems.forEach(item => {
+          item.style.display = 'flex';
+          item.style.backgroundColor = '';
+        });
         kpiCards.forEach(card => card.style.display = 'block');
+        blockBoxes.forEach(box => box.style.display = 'block');
         return;
       }
 
-      // If user is searching, show all sections so matches are visible
-      roleSections.forEach(sec => sec.style.display = 'block');
+      // Show all category blocks while searching
+      catBlocks.forEach(blk => blk.style.display = 'block');
       roleTabBtns.forEach(b => b.classList.remove('active'));
       document.querySelector('.role-tab-btn[data-filter="all"]')?.classList.add('active');
 
@@ -118,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const text = item.textContent.toLowerCase();
         if (text.includes(query)) {
           item.style.display = 'flex';
-          item.style.backgroundColor = 'rgba(254, 240, 138, 0.2)';
+          item.style.backgroundColor = 'rgba(254, 240, 138, 0.25)';
         } else {
           item.style.display = 'none';
           item.style.backgroundColor = '';
@@ -148,7 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   console.log(
     '%c🏛️ TRƯỜNG THPT PHỤC HÒA – CAO BẰNG\n' +
-    '%cĐỀ ÁN VỊ TRÍ VIỆC LÀM VIÊN CHỨC QUẢN LÝ (04 VỊ TRÍ)\n' +
+    '%cĐỀ ÁN VỊ TRÍ VIỆC LÀM VIÊN CHỨC (03 DANH MỤC TOÀN DIỆN)\n' +
     '%cCăn cứ Nghị định số 232/2026/NĐ-CP & Thông tư số 15/2026/TT-BGDĐT\n' +
     '%cTự động đẩy lên GitHub & Vercel | Năm học 2026–2027',
     'color: #f59e0b; font-size: 16px; font-weight: bold;',

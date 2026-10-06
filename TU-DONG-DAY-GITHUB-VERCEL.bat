@@ -5,8 +5,8 @@ color 0B
 
 echo ======================================================================
 echo   HỆ THỐNG TỰ ĐỘNG ĐỒNG BỘ GITHUB & VERCEL
-echo   Đề án Vị trí việc làm Viên chức quản lý:
-echo   Hiệu trưởng, Phó Hiệu trưởng, Tổ trưởng CM, Tổ phó CM
+echo   Đề án Vị trí việc làm Viên chức toàn diện: 03 Danh mục
+echo   1. Quản lý | 2. Chuyên môn nghiệp vụ | 3. Hỗ trợ, phục vụ
 echo   Căn cứ Nghị định số 232/2026/NĐ-CP ngày 26/6/2026 của Chính phủ
 echo   Trường THPT Phục Hòa - Tỉnh Cao Bằng
 echo ======================================================================
@@ -15,7 +15,7 @@ echo.
 set "PATH=C:\Program Files\Python39;C:\Users\DMX HOA THUAN\AppData\Local\Programs\Python\Python39;C:\Users\DMX HOA THUAN\AppData\Local\Microsoft\WindowsApps;C:\Users\DMX HOA THUAN\AppData\Local\Programs\Git\cmd;C:\Users\DMX HOA THUAN\AppData\Local\Programs\gh\bin;%PATH%"
 cd /d "d:\Du-an-web\web-vtvl-ttcm-tpcm-phuc-hoa"
 
-echo [1/4] Đang tự động tạo/cập nhật bảng Excel Đề án VTVL (07 Sheet)...
+echo [1/4] Đang tự động tạo/cập nhật bảng Excel Đề án 3 Danh mục VTVL (07 Sheet)...
 python generate_excel.py
 if %errorlevel% neq 0 (
     echo [!] Cảnh báo: Không thể chạy Python, kiểm tra môi trường Python.
@@ -36,7 +36,7 @@ if %errorlevel% equ 0 (
 ) else (
     for /f "tokens=1-4 delims=/ " %%a in ("%date%") do set mydate=%%a-%%b-%%c
     for /f "tokens=1-2 delims=: " %%a in ("%time%") do set mytime=%%a:%%b
-    git commit -m "feat: Cap nhat De an VTVL 4 vi tri quan ly (HT, PHT, TTCM, TPCM) theo Nghi dinh 232/2026/ND-CP - %date% %time%"
+    git commit -m "feat: Cap nhat De an VTVL tron bo 03 Danh muc (Quan ly, Chuyen mon, Ho tro) theo Nghi dinh 232/2026/ND-CP - %date% %time%"
     echo       ✓ Đã tạo commit thành công!
 )
 
