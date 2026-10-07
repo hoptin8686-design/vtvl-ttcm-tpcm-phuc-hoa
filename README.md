@@ -50,14 +50,15 @@
 ---
 
 ### 📊 Cấu trúc tập tin Excel Đề án (.xlsx)
-Tập tin **`Bang-mo-ta-De-an-VTVL-THPT-Phuc-Hoa-ND232-2026.xlsx`** gồm **07 Sheet chuẩn mực**:
-1. **Sheet 1: `1. Đề án & Căn cứ`** – Tờ trình phê duyệt Đề án VTVL, căn cứ pháp lý NĐ 232/2026, quy mô trường lớp.
-2. **Sheet 2: `2. Tổng hợp Danh mục Phụ lục I`** – Ma trận chuẩn hóa toàn bộ 35 biên chế thuộc 03 danh mục.
-3. **Sheet 3: `3. DM1 - VTVL Quản lý`** – Bản mô tả chi tiết: Hiệu trưởng (1), Phó Hiệu trưởng (2), TTCM (2), TPCM (2).
-4. **Sheet 4: `4. DM2 - Chuyên môn (13 Môn)`** – Bản mô tả chi tiết 13 môn học giảng dạy (22 giáo viên).
-5. **Sheet 5: `5. DM3 - VTVL Hỗ trợ (6 Vị trí)`** – Bản mô tả chi tiết 06 người hỗ trợ: Kế toán, Văn thư, Thiết bị TN, Giáo vụ, Y tế, Thủ quỹ.
-6. **Sheet 6: `6. Khung năng lực 5 Cấp độ`** – Khung năng lực chuẩn theo Điều 8 & Phụ lục IV Nghị định 232/2026/NĐ-CP.
-7. **Sheet 7: `7. KPI đo lường đầu ra`** – Bộ tiêu chí KPI định lượng kết quả đầu ra cho cả 35 biên chế.
+Tập tin **`Bang-mo-ta-De-an-VTVL-THPT-Phuc-Hoa-ND232-2026.xlsx`** gồm **08 Sheet chuẩn mực**:
+1. **Sheet 1: `1. Đề án & Căn cứ NĐ 232`** – Tờ trình phê duyệt Đề án VTVL, căn cứ pháp lý NĐ 232/2026/NĐ-CP, quy mô trường lớp.
+2. **Sheet 2: `2. Phụ lục I - DM 35 VTVL`** – Ma trận chuẩn hóa toàn bộ 35 biên chế thuộc 03 danh mục theo Phụ lục I C3 Phục Hòa.
+3. **Sheet 3: `3. DM1 - VTVL Quản lý`** – Bảng mô tả 6 cột: Hiệu trưởng (1), Phó Hiệu trưởng (2), TTCM (2), TPCM (2).
+4. **Sheet 4: `4. DM2 - VTVL 13 Môn học`** – Bảng mô tả 6 cột chi tiết từng môn trong 13 môn học giảng dạy (22 giáo viên), mỗi môn đủ 4 nhóm nhiệm vụ: Giảng dạy 40%, Chủ nhiệm 25%, Tự học NCBL AI 20%, HSG Ôn thi 15%.
+5. **Sheet 5: `5. DM3 - VTVL 06 Hỗ trợ`** – Bảng mô tả 6 cột chi tiết 06 vị trí hỗ trợ: Kế toán, Văn thư, Thiết bị TN, Giáo vụ, Y tế học đường, Thủ quỹ.
+6. **Sheet 6: `6. Mau Mo Ta Chuan ND 232`** – Bản mô tả công việc và khung năng lực theo mẫu chuẩn công vụ Phần B Phụ lục IV/VI Nghị định số 232/2026/NĐ-CP.
+7. **Sheet 7: `7. Khung năng lực 3 Nhóm`** – Khung năng lực chuẩn 5 cấp độ theo Điều 8 Nghị định 232/2026/NĐ-CP.
+8. **Sheet 8: `8. KPI đo lường 3 Nhóm`** – Bộ tiêu chí KPI định lượng kết quả đầu ra cho cả 35 biên chế.
 
 ---
 
