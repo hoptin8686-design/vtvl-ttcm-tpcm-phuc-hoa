@@ -4,11 +4,11 @@ Script sinh file Excel: Đề án Vị trí việc làm Viên chức – THPT Ph
 Căn cứ Nghị định số 232/2026/NĐ-CP ngày 26/6/2026 của Chính phủ
 Áp dụng ĐÚNG GIỐNG MẪU BẢNG MÔ TẢ VỊ TRÍ VIỆC LÀM TRÊN MÀN HÌNH MÁY TÍNH
 ĐẦY ĐỦ TRỌN BỘ 35 BIÊN CHẾ (03 NHÓM DANH MỤC):
-1. Vị trí việc làm Quản lý (07 người): Hiệu trưởng, Phó Hiệu trưởng, TTCM, TPCM.
+1. Vị trí việc làm Quản lý (07 người): Hiệu trưởng (1), Phó Hiệu trưởng (2), TTCM (2), TPCM (2).
 2. Vị trí việc làm Chuyên môn nghiệp vụ theo số các môn học trong phụ lục (22 người - 13 môn học):
    Ngữ văn (3), Toán (3), Ngoại ngữ (2), Lịch sử (2), GDTC (2), GDQP-AN (1), Địa lí (2),
    GD KT&PL (1), Vật lí (1), Hóa học (1), Sinh học (1), Công nghệ (2), Tin học (1).
-3. Vị trí việc làm Hỗ trợ 06 người: Kế toán, Văn thư, Thiết bị TN, Giáo vụ, Y tế học đường, Thủ quỹ.
+3. Vị trí việc làm Hỗ trợ 06 người: Kế toán (1), Văn thư (1), Thiết bị TN (1), Giáo vụ (1), Y tế học đường (1), Thủ quỹ (1).
 Kèm Khung năng lực chuẩn 5 cấp độ và KPI đo lường định lượng.
 """
 
@@ -242,11 +242,11 @@ def create_full_vtvl_excel(output_paths):
     # ==============================================================================
     ws3 = wb.create_sheet(title="3. DM1 - VTVL Quản lý")
     ws3.column_dimensions['A'].width = 8
-    ws3.column_dimensions['B'].width = 28
-    ws3.column_dimensions['C'].width = 30
+    ws3.column_dimensions['B'].width = 30
+    ws3.column_dimensions['C'].width = 32
     ws3.column_dimensions['D'].width = 46
     ws3.column_dimensions['E'].width = 12
-    ws3.column_dimensions['F'].width = 40
+    ws3.column_dimensions['F'].width = 42
 
     ws3.merge_cells("A1:F1")
     ws3["A1"] = "DANH MỤC 1: BẢN MÔ TẢ VỊ TRÍ VIỆC LÀM VIÊN CHỨC QUẢN LÝ (07 NGƯỜI)"
@@ -263,59 +263,128 @@ def create_full_vtvl_excel(output_paths):
         cell.alignment = ALIGN_CENTER
         cell.border = BORDER_HEADER
 
-    dm1_rows = [
-        ("1", "Hiệu trưởng\n(HT-THPT-01)\nPhụ cấp: 0.70 | 01 người\nĐịnh mức: 02 tiết/tuần",
-         "1. Chiến lược & Kế hoạch phát triển",
-         "- Xây dựng Chiến lược 5 năm, Kế hoạch năm học trình cấp có thẩm quyền phê duyệt.\n- Ban hành Quy chế dân chủ, Quy chế chi tiêu nội bộ, Quy chế làm việc của trường.",
-         "15%",
-         "- Chiến lược phát triển trường 5 năm.\n- Kế hoạch năm học & Quy chế làm việc.\n- Báo cáo định kỳ Sở GD&ĐT."),
-        ("2", "Hiệu trưởng\n(HT-THPT-01)",
-         "2. Quản lý nhân sự & Đánh giá thi đua",
-         "- Phân công nhiệm vụ, bổ nhiệm tổ trưởng, tổ phó; đánh giá xếp loại VC hàng năm theo NĐ 232/2026/NĐ-CP.\n- Thực hiện công tác quy hoạch, đào tạo, bồi dưỡng và thi đua khen thưởng.",
-         "20%",
-         "- QĐ phân công nhiệm vụ cán bộ giáo viên.\n- QĐ xếp loại thi đua, khen thưởng viên chức.\n- Hồ sơ quy hoạch cán bộ quản lý."),
-        ("3", "Hiệu trưởng\n(HT-THPT-01)",
-         "3. Quản lý tài chính & Cơ sở vật chất",
-         "- Chủ tài khoản, duyệt thu - chi ngân sách, kiểm tra công tác kế toán, quản lý tài sản công đúng luật.\n- Chỉ đạo sửa chữa, nâng cấp CSVC trường học bảo đảm dạy và học an toàn.",
-         "15%",
-         "- Dự toán & Báo cáo quyết toán ngân sách.\n- Quy chế chi tiêu nội bộ chuẩn hóa.\n- Báo cáo kiểm kê tài sản hàng năm."),
-        ("4", "Hiệu trưởng\n(HT-THPT-01)",
-         "4. Chỉ đạo chuyên môn & Giảng dạy",
-         "- Chỉ đạo kỳ thi tốt nghiệp THPT, kỳ thi chọn HSG; trực tiếp giảng dạy 02 tiết/tuần theo quy định.\n- Thanh tra nội bộ, dự giờ thăm lớp, đổi mới PPDH và ứng dụng AI toàn trường.",
-         "20%",
-         "- Báo cáo kết quả kỳ thi tốt nghiệp THPT.\n- Sổ giáo án cá nhân giảng dạy 02 tiết/tuần.\n- Biên bản kiểm tra chuyên môn nội bộ."),
-        ("5", "Phó Hiệu trưởng\n(PHT-THPT-01)\nPhụ cấp: 0.50 | 02 người\nĐịnh mức: 04 tiết/tuần",
-         "1. Chỉ đạo & điều hành chuyên môn",
-         "- Thẩm định và duyệt Kế hoạch giáo dục nhà trường, kế hoạch các tổ CM theo CT GDPT 2018.\n- Chỉ đạo đổi mới phương pháp dạy học, giáo dục STEM/STEAM, chuyển đổi số dạy học.",
-         "25%",
-         "- Kế hoạch chuyên môn năm học được phê duyệt.\n- Lịch thi, thời khóa biểu toàn trường.\n- Báo cáo sơ kết, tổng kết chuyên môn."),
-        ("6", "Phó Hiệu trưởng\n(PHT-THPT-01)",
-         "2. Khảo thí, ôn thi TN & Ký số học bạ",
-         "- Xây dựng ma trận đặc tả, ngân hàng đề kiểm tra định kỳ; quản lý ôn thi TN THPT khối 12.\n- Kiểm tra, ký duyệt học bạ điện tử, kiểm tra hồ sơ giáo án giáo viên; dạy 04 tiết/tuần.",
-         "20%",
-         "- Ngân hàng đề kiểm tra định kỳ chuẩn quy chế.\n- Kế hoạch ôn thi TN THPT chi tiết theo môn.\n- 100% học bạ số được duyệt đúng hạn."),
-        ("7", "Tổ trưởng CM\n(TTCM-THPT-01)\nPhụ cấp: 0.25 | 02 người\nĐịnh mức: 14 tiết/tuần",
-         "1. Quản lý toàn diện chuyên môn tổ",
-         "- Xây dựng kế hoạch dạy học môn học (PL1, PL2, PL3) theo CT GDPT 2018; phân công GV dạy đúng chuyên ngành.\n- Tổ chức sinh hoạt chuyên môn theo NCBL (≥ 2 lần/tháng); kiểm tra giáo án, dự giờ GV.",
-         "40%",
-         "- Kế hoạch giáo dục tổ chuyên môn.\n- Biên bản họp sinh hoạt chuyên môn theo NCBL.\n- Phiếu đánh giá giáo viên trong tổ."),
-        ("8", "Tổ phó CM\n(TPCM-THPT-01)\nPhụ cấp: 0.15 | 02 người\nĐịnh mức: 16 tiết/tuần",
-         "1. Quản lý nề nếp, sổ sách & tiến độ",
-         "- Theo dõi tiến độ chương trình hàng tuần, lịch báo giảng điện tử, kế hoạch dạy thay/bù của tổ viên.\n- Kiểm tra nề nếp hồ sơ sổ sách, đôn đốc ký số học bạ; giảng dạy 16 tiết/tuần.",
-         "40%",
-         "- Sổ theo dõi tiến độ chương trình hàng tuần.\n- Biên bản kiểm tra nề nếp hồ sơ chuyên môn.\n- Báo cáo tổng hợp nề nếp tổ viên.")
+    # Full 5 duties for each management position totaling 100%
+    dm1_management_specs = [
+        {
+            "name": "Hiệu trưởng", "code": "HT-THPT-01", "grade": "Bậc 3 đến Bậc 5", "quota": "01 người", "pc": "Phụ cấp: 0.70", "quota_teach": "Định mức: 02 tiết/tuần",
+            "duties": [
+                ("1. Chiến lược & Kế hoạch phát triển trường",
+                 "- Xây dựng Chiến lược phát triển trường 5 năm, Kế hoạch GD nhà trường theo CT GDPT 2018.\n- Ban hành Bộ Quy chế quản trị nội bộ trước ngày 05/9 hàng năm.",
+                 "15%",
+                 "- Chiến lược phát triển trường 2026-2030.\n- Kế hoạch năm học & Quy chế làm việc.\n- Báo cáo định kỳ Sở GD&ĐT."),
+                ("2. Quản lý nhân sự & Đánh giá viên chức",
+                 "- Phân công nhiệm vụ, bổ nhiệm TTCM/TPCM; đánh giá xếp loại viên chức theo NĐ 232/2026/NĐ-CP.\n- Thực hiện công tác quy hoạch, đào tạo, bồi dưỡng và thi đua khen thưởng.",
+                 "20%",
+                 "- QĐ phân công nhiệm vụ cán bộ giáo viên.\n- QĐ bổ nhiệm TTCM/TPCM.\n- Hồ sơ xếp loại thi đua, khen thưởng viên chức."),
+                ("3. Quản lý tài chính & Tài sản công",
+                 "- Chủ tài khoản, duyệt thu - chi ngân sách theo Luật Ngân sách và Luật Kế toán; quản lý tài sản công đúng luật.\n- Chỉ đạo sửa chữa CSVC, mua sắm TBDH; bảo đảm môi trường sư phạm an toàn.",
+                 "15%",
+                 "- Dự toán & Báo cáo quyết toán năm.\n- Quy chế chi tiêu nội bộ chuẩn hóa.\n- Báo cáo kiểm kê tài sản hàng năm."),
+                ("4. Chỉ đạo chuyên môn, kỳ thi & KĐCLGD",
+                 "- Chỉ đạo kỳ thi tốt nghiệp THPT (mục tiêu đỗ ≥ 98.5%), thi tuyển sinh 10, thi chọn HSG tỉnh.\n- Chỉ đạo công tác kiểm định chất lượng giáo dục, duy trì trường đạt chuẩn quốc gia.",
+                 "20%",
+                 "- Báo cáo kết quả kỳ thi tốt nghiệp THPT.\n- Báo cáo kết quả thi HSG cấp tỉnh.\n- Hồ sơ tự đánh giá KĐCLGD."),
+                ("5. Chuyển đổi số, an toàn trường học & Giảng dạy",
+                 "- Chỉ đạo 100% học bạ số ký đúng hạn, ứng dụng AI toàn trường; xây dựng trường học an toàn, hạnh phúc.\n- Trực tiếp giảng dạy đúng định mức 02 tiết/tuần theo quy định.",
+                 "30%",
+                 "- 100% học bạ số được phê duyệt đúng hạn.\n- Kế hoạch CĐS và ứng dụng AI.\n- Sổ giáo án cá nhân giảng dạy 02 tiết/tuần.")
+            ]
+        },
+        {
+            "name": "Phó Hiệu trưởng", "code": "PHT-THPT-01", "grade": "Bậc 3 đến Bậc 5", "quota": "02 người", "pc": "Phụ cấp: 0.50", "quota_teach": "Định mức: 04 tiết/tuần",
+            "duties": [
+                ("1. Chỉ đạo & điều hành chuyên môn dạy học",
+                 "- Thẩm định và duyệt Kế hoạch dạy học của các tổ; chỉ đạo xếp thời khóa biểu khoa học.\n- Theo dõi lịch báo giảng, kế hoạch dạy bù/thay; bảo đảm tiến độ chương trình 100%.",
+                 "25%",
+                 "- Kế hoạch chuyên môn năm học được phê duyệt.\n- Thời khóa biểu toàn trường.\n- Báo cáo sơ kết, tổng kết chuyên môn."),
+                ("2. Chỉ đạo khảo thí, ôn thi TN & thi HSG",
+                 "- Xây dựng ma trận đặc tả, ngân hàng đề kiểm tra định kỳ; tổ chức ôn thi TN THPT khối 12.\n- Phân tích phổ điểm thi thử; chỉ đạo bồi dưỡng HSG các môn thi cấp tỉnh.",
+                 "20%",
+                 "- Ngân hàng đề kiểm tra định kỳ.\n- Kế hoạch và lịch ôn thi TN THPT chi tiết.\n- Danh sách học sinh đạt giải HSG tỉnh."),
+                ("3. Kiểm tra chuyên môn nội bộ & Dự giờ",
+                 "- Kiểm tra nội bộ 100% giáo viên theo kế hoạch; trực tiếp dự giờ 1-2 tiết/tuần.\n- Tổ chức Hội thi GVDG cấp trường; bồi dưỡng giáo viên tham dự thi cấp tỉnh.",
+                 "15%",
+                 "- Kế hoạch và biên bản kiểm tra nội bộ.\n- Phiếu dự giờ giáo viên.\n- Hồ sơ Hội thi GVDG cấp trường."),
+                ("4. Phụ trách CSVC, thiết bị dạy học & Hoạt động GD",
+                 "- Quản lý khai thác phòng bộ môn, phòng máy vi tính, thiết bị dạy học.\n- Chỉ đạo hoạt động trải nghiệm, hướng nghiệp; thay mặt HT khi được ủy quyền.",
+                 "15%",
+                 "- Kế hoạch sử dụng CSVC và thiết bị dạy học.\n- Báo cáo kiểm kê thiết bị định kỳ.\n- Biên bản xử lý công việc khi được ủy quyền."),
+                ("5. Chuyển đổi số, ký số học bạ & Giảng dạy",
+                 "- Đôn đốc ký số học bạ đúng hạn 100%; kiểm tra việc vào điểm số điện tử.\n- Trực tiếp giảng dạy 04 tiết/tuần theo phân công chuyên môn.",
+                 "25%",
+                 "- 100% học bạ số được ký duyệt đúng hạn.\n- Sổ theo dõi tiến độ điểm số.\n- Sổ giáo án cá nhân giảng dạy 04 tiết/tuần.")
+            ]
+        },
+        {
+            "name": "Tổ trưởng chuyên môn", "code": "TTCM-THPT-01", "grade": "Bậc 3 đến Bậc 4", "quota": "02 người", "pc": "Phụ cấp: 0.25", "quota_teach": "Định mức: 14 tiết/tuần",
+            "duties": [
+                ("1. Quản lý toàn diện chuyên môn tổ & Kế hoạch dạy học",
+                 "- Xây dựng và thực hiện kế hoạch dạy học môn học (PL1, PL2, PL3) theo CT GDPT 2018.\n- Phân công giáo viên giảng dạy đúng chuyên môn và năng lực.",
+                 "25%",
+                 "- Kế hoạch giáo dục tổ chuyên môn (PL1, PL2, PL3).\n- Bảng phân công nhiệm vụ giáo viên trong tổ.\n- Lịch sinh hoạt tổ chuyên môn."),
+                ("2. Sinh hoạt chuyên môn theo NCBL & Đổi mới PPDH",
+                 "- Tổ chức sinh hoạt chuyên môn theo NCBL (≥ 2 lần/tháng); đổi mới PPDH tích cực, STEM.\n- Ứng dụng AI hỗ trợ soạn giảng, tạo đề kiểm tra đánh giá năng lực.",
+                 "20%",
+                 "- Biên bản họp sinh hoạt tổ theo NCBL.\n- Chuyên đề đổi mới PPDH hoặc bài học STEM.\n- Kho học liệu số của tổ."),
+                ("3. Kiểm tra hồ sơ giáo án, dự giờ & Đánh giá tổ viên",
+                 "- Kiểm tra giáo án, hồ sơ chuyên môn của tổ viên hàng tháng; dự giờ 2-3 tiết/kỳ/GV.\n- Đánh giá chuẩn nghề nghiệp giáo viên cuối năm học.",
+                 "20%",
+                 "- Sổ kiểm tra hồ sơ chuyên môn tổ.\n- Phiếu đánh giá dự giờ giáo viên.\n- Hồ sơ đánh giá chuẩn nghề nghiệp tổ viên."),
+                ("4. Bồi dưỡng học sinh giỏi & Phụ đạo học sinh yếu",
+                 "- Xây dựng kế hoạch bồi dưỡng đội tuyển HSG môn học tham dự thi cấp tỉnh.\n- Theo dõi và phân công phụ đạo học sinh có nguy cơ chưa đạt chuẩn.",
+                 "15%",
+                 "- Kế hoạch bồi dưỡng HSG và phụ đạo của tổ.\n- Danh sách học sinh đội tuyển.\n- Kết quả học sinh đạt giải HSG cấp tỉnh."),
+                ("5. Giảng dạy 14 tiết/tuần & Làm gương chuyên môn",
+                 "- Giảng dạy đủ 14 tiết/tuần (được giảm 3 tiết); đi đầu trong đổi mới phương pháp.\n- Hoàn thành nhận xét, ký số học bạ đúng thời hạn quy định.",
+                 "20%",
+                 "- 100% tiết dạy có giáo án chuẩn bị chu đáo.\n- Học bạ số ký duyệt đúng hạn.\n- Học sinh lớp phụ trách đạt kết quả cao.")
+            ]
+        },
+        {
+            "name": "Tổ phó chuyên môn", "code": "TPCM-THPT-01", "grade": "Bậc 3 đến Bậc 4", "quota": "02 người", "pc": "Phụ cấp: 0.15", "quota_teach": "Định mức: 16 tiết/tuần",
+            "duties": [
+                ("1. Theo dõi tiến độ chương trình & Kế hoạch dạy bù/thay",
+                 "- Giúp Tổ trưởng theo dõi sát tiến độ chương trình hàng tuần của các thành viên trong tổ.\n- Lập kế hoạch dạy bù, dạy thay kịp thời, bảo đảm tiến độ.",
+                 "25%",
+                 "- Sổ theo dõi tiến độ chương trình hàng tuần.\n- Bảng tổng hợp lịch dạy bù, dạy thay.\n- Báo cáo tiến độ chương trình định kỳ."),
+                ("2. Đôn đốc lập lịch báo giảng & Kiểm tra hồ sơ",
+                 "- Đôn đốc các thành viên cập nhật lịch báo giảng điện tử đúng hạn đầu tuần.\n- Hỗ trợ Tổ trưởng kiểm tra nề nếp hồ sơ sổ sách chuyên môn.",
+                 "20%",
+                 "- Lịch báo giảng điện tử của tổ đúng hạn 100%.\n- Biên bản kiểm tra nề nếp hồ sơ chuyên môn.\n- Sổ tích lũy chuyên môn cá nhân."),
+                ("3. Kiểm tra thiết bị dạy học & Sử dụng phòng bộ môn",
+                 "- Theo dõi, đôn đốc việc mượn và sử dụng thiết bị dạy học, hóa chất, phòng thực hành bộ môn của tổ viên.",
+                 "15%",
+                 "- Sổ theo dõi mượn thiết bị và phòng bộ môn.\n- Phiếu đề xuất sửa chữa, bổ sung thiết bị dạy học của tổ."),
+                ("4. Đôn đốc cập nhật điểm số & Ký số học bạ",
+                 "- Theo dõi tiến độ kiểm tra đánh giá, vào điểm số điện tử và ký số học bạ của các giáo viên trong tổ; bảo đảm không trễ hạn.",
+                 "15%",
+                 "- Báo cáo tiến độ điểm số của tổ.\n- 100% thành viên ký số học bạ đúng hạn.\n- Không có vi phạm quy chế chuyên môn."),
+                ("5. Giảng dạy 16 tiết/tuần & Điều hành khi ủy quyền",
+                 "- Giảng dạy đủ 16 tiết/tuần (được giảm 1 tiết); thay mặt Tổ trưởng điều hành tổ khi được ủy quyền.",
+                 "25%",
+                 "- Giáo án cá nhân giảng dạy 16 tiết/tuần.\n- Biên bản điều hành họp tổ khi Tổ trưởng vắng mặt.\n- Lớp phụ trách đạt chỉ tiêu giao.")
+            ]
+        }
     ]
 
     r_idx = 4
-    for it in dm1_rows:
-        for c_i, v in enumerate(it, start=1):
-            ws3.cell(r_idx, c_i, v)
-        apply_row_styles(ws3, r_idx, font=FONT_REGULAR)
-        ws3.cell(r_idx, 1).alignment = ALIGN_CENTER
-        ws3.cell(r_idx, 5).alignment = ALIGN_CENTER
-        if "Hiệu trưởng\n(" in it[1] or "Phó Hiệu trưởng\n(" in it[1] or "Tổ trưởng" in it[1] or "Tổ phó" in it[1]:
-            ws3.cell(r_idx, 2).font = FONT_BOLD
-        r_idx += 1
+    stt_counter = 1
+    for m in dm1_management_specs:
+        vtvl_header = f"{m['name']}\n({m['code']})\n{m['grade']} | {m['quota']}\n{m['pc']} | {m['quota_teach']}"
+        for i, (d_title, d_desc, d_weight, d_out) in enumerate(m["duties"]):
+            ws3.cell(r_idx, 1, stt_counter)
+            ws3.cell(r_idx, 2, vtvl_header if i == 0 else f"{m['name']} (tiếp)")
+            ws3.cell(r_idx, 3, d_title)
+            ws3.cell(r_idx, 4, d_desc)
+            ws3.cell(r_idx, 5, d_weight)
+            ws3.cell(r_idx, 6, d_out)
+            apply_row_styles(ws3, r_idx, font=FONT_REGULAR)
+            ws3.cell(r_idx, 1).alignment = ALIGN_CENTER
+            ws3.cell(r_idx, 5).alignment = ALIGN_CENTER
+            if i == 0:
+                ws3.cell(r_idx, 2).font = FONT_BOLD
+            r_idx += 1
+            stt_counter += 1
 
     # ==============================================================================
     # SHEET 4: DANH MỤC 2: BẢNG MÔ TẢ VTVL 13 MÔN HỌC (22 BIÊN CHẾ)
@@ -342,7 +411,6 @@ def create_full_vtvl_excel(output_paths):
         cell.alignment = ALIGN_CENTER
         cell.border = BORDER_HEADER
 
-    # Data for 13 subjects, each with full 4 detailed duties and specific weights & products
     subjects_specs = [
         {
             "name": "Giáo viên môn Ngữ văn", "code": "GV-THPT-01", "grade": "Bậc 3 đến Bậc 4", "quota": "03 biên chế",
@@ -809,24 +877,24 @@ def create_full_vtvl_excel(output_paths):
 
     doc_content = [
         ("I", "THÔNG TIN CHUNG VỀ VỊ TRÍ VIỆC LÀM", ""),
-        ("1", "Tên vị trí việc làm", "Giáo viên trung học phổ thông (Giáo viên 13 môn học trong Phụ lục I) / Viên chức Hỗ trợ"),
-        ("2", "Mã số vị trí việc làm", "GV-THPT-01 (Chuyên môn) | KT, VT, TBTN, GVU, YT, TQ (Hỗ trợ)"),
-        ("3", "Bậc chức danh nghề nghiệp", "Chuyên môn: Bậc 3 đến Bậc 4 | Hỗ trợ: Bậc 1 đến Bậc 4"),
+        ("1", "Tên vị trí việc làm", "Giáo viên trung học phổ thông (Giáo viên 13 môn học trong Phụ lục I) / Viên chức Hỗ trợ / Viên chức Quản lý"),
+        ("2", "Mã số vị trí việc làm", "HT, PHT, TTCM, TPCM (Quản lý) | GV-THPT-01 (13 Môn) | KT, VT, TBTN, GVU, YT, TQ (Hỗ trợ)"),
+        ("3", "Bậc chức danh nghề nghiệp", "Quản lý & Chuyên môn: Bậc 3 đến Bậc 5 | Hỗ trợ: Bậc 1 đến Bậc 4"),
         ("4", "Cơ quan, đơn vị sử dụng", "Trường THPT Phục Hòa, huyện Phục Hòa, tỉnh Cao Bằng"),
         ("5", "Vị trí việc làm cấp trên", "Tổ trưởng chuyên môn, Phó Hiệu trưởng, Hiệu trưởng Trường THPT Phục Hòa"),
-        ("6", "Định mức làm việc", "Giáo viên: 17 tiết/tuần | Viên chức hỗ trợ: 40 giờ/tuần"),
+        ("6", "Định mức làm việc", "Hiệu trưởng: 2t/t | Phó HT: 4t/t | TTCM: 14t/t | TPCM: 16t/t | Giáo viên 13 môn: 17 tiết/tuần | Viên chức hỗ trợ: 40 giờ/tuần"),
         ("II", "MỤC TIÊU VỊ TRÍ VIỆC LÀM", 
-         "Đảm nhận nhiệm vụ giảng dạy và giáo dục học sinh theo Chương trình GDPT 2018 (đối với GV 13 môn học) và bảo đảm các điều kiện về tài chính, văn thư, thiết bị thí nghiệm, giáo vụ, y tế học đường, ngân quỹ phục vụ vận hành thông suốt của nhà trường (đối với 06 viên chức hỗ trợ)."),
+         "Lãnh đạo, quản lý và điều hành đơn vị sự nghiệp công lập (đối với Ban Giám hiệu, TTCM, TPCM); đảm nhận nhiệm vụ giảng dạy và giáo dục học sinh theo Chương trình GDPT 2018 (đối với GV 13 môn học); và bảo đảm các điều kiện về tài chính, văn thư, thiết bị thí nghiệm, giáo vụ, y tế học đường, quỹ tiền mặt phục vụ vận hành thông suốt của nhà trường (đối với 06 viên chức hỗ trợ)."),
         ("III", "CÁC CÔNG VIỆC VÀ KẾT QUẢ ĐẦU RA CỤ THỂ", 
-         "Chi tiết cụ thể theo từng môn học và từng vị trí hỗ trợ được quy định tại Sheet 3 (Quản lý), Sheet 4 (13 Môn học Chuyên môn) và Sheet 5 (06 Vị trí Hỗ trợ)."),
+         "Chi tiết cụ thể theo từng chức danh quản lý, từng môn học và từng vị trí hỗ trợ được quy định tại Sheet 3 (Quản lý 7 BC), Sheet 4 (13 Môn học Chuyên môn 22 BC) và Sheet 5 (06 Vị trí Hỗ trợ 6 BC)."),
         ("IV", "KHUNG NĂNG LỰC VỊ TRÍ VIỆC LÀM",
-         "1. Năng lực chung:\n - Đạo đức nghề nghiệp, liêm chính sư phạm, phục vụ nhân dân (Cấp độ 4 - 5)\n - Kỷ luật, trách nhiệm và tinh thần hợp tác đồng nghiệp (Cấp độ 4 - 5)\n - Đổi mới sáng tạo, chuyển đổi số và ứng dụng AI (Cấp độ 3 - 4)\n2. Năng lực chuyên môn nghiệp vụ:\n - Nắm vững kiến thức bộ môn theo CT GDPT 2018 (Cấp độ 4 - 5)\n - Kỹ năng sư phạm, tổ chức hoạt động học tập, dạy học STEM (Cấp độ 4 - 5)\n - Đánh giá năng lực học sinh theo thông tư Bộ GD&ĐT (Cấp độ 4)"),
+         "1. Năng lực chung:\n - Đạo đức nghề nghiệp, liêm chính sư phạm, phục vụ nhân dân (Cấp độ 4 - 5)\n - Kỷ luật, trách nhiệm và tinh thần hợp tác đồng nghiệp (Cấp độ 4 - 5)\n - Đổi mới sáng tạo, chuyển đổi số và ứng dụng AI (Cấp độ 3 - 4)\n2. Năng lực quản lý (dành cho Ban Giám hiệu, TTCM, TPCM):\n - Tư duy chiến lược, lập kế hoạch và tổ chức điều hành (Cấp độ 4 - 5)\n - Quản trị nhân lực, kiểm tra giám sát và đánh giá viên chức (Cấp độ 4 - 5)\n3. Năng lực chuyên môn nghiệp vụ:\n - Nắm vững kiến thức 13 bộ môn theo CT GDPT 2018 (Cấp độ 4 - 5)\n - Kỹ năng sư phạm, tổ chức hoạt động học tập, dạy học STEM (Cấp độ 4 - 5)\n - Đánh giá năng lực học sinh theo thông tư Bộ GD&ĐT (Cấp độ 4)"),
         ("V", "MỐI QUAN HỆ CÔNG TÁC",
          "1. Quan hệ bên trong: Báo cáo trực tiếp Tổ trưởng CM, Phó Hiệu trưởng, Hiệu trưởng; phối hợp với GV chủ nhiệm, GV bộ môn, nhân viên Thiết bị, Thư viện, Y tế, Giáo vụ, Thủ quỹ.\n2. Quan hệ bên ngoài: Phối hợp thường xuyên với Cha mẹ học sinh; Hội Khuyến học địa phương; Phòng chuyên môn Sở GD&ĐT Cao Bằng."),
         ("VI", "PHẠM VI QUYỀN HẠN",
          "1. Về chuyên môn: Chủ động lựa chọn PPDH, kiểm tra đánh giá theo kế hoạch giáo dục môn học; đánh giá xếp loại học sinh theo quy chế; tham gia biên soạn tài liệu giáo dục địa phương.\n2. Về quản lý: Quản lý học sinh trong giờ học và các hoạt động giáo dục phân công.\n3. Về bảo đảm điều kiện: Được trang bị đầy đủ phương tiện dạy học, phòng thực hành bộ môn, thiết bị CNTT, chế độ phụ cấp và bảo hộ lao động theo quy định."),
         ("VII", "YÊU CẦU VỀ TRÌNH ĐỘ, KINH NGHIỆM, PHẨM CHẤT",
-         "- Về trình độ đào tạo: Bằng Cử nhân (Đại học) sư phạm trở lên đúng chuyên ngành đối với Giáo viên; Bằng Đại học/Cao đẳng/Trung cấp chuyên ngành phù hợp đối với Viên chức hỗ trợ (Kế toán, Văn thư, Thiết bị, Y tế...).\n- Về chứng chỉ: Có chứng chỉ bồi dưỡng tiêu chuẩn chức danh nghề nghiệp viên chức theo quy định.\n- Về kỹ năng số: Sử dụng thành thạo máy vi tính, phần mềm quản lý giáo dục điện tử, ký số học bạ, khai thác công cụ AI hỗ trợ công việc.\n- Phẩm chất đạo đức: Mẫu mực, tâm huyết với sự nghiệp giáo dục vùng cao Phục Hòa.")
+         "- Về trình độ đào tạo: Bằng Cử nhân (Đại học) sư phạm trở lên đúng chuyên ngành đối với Giáo viên và Cán bộ quản lý; Bằng Đại học/Cao đẳng/Trung cấp chuyên ngành phù hợp đối với Viên chức hỗ trợ (Kế toán, Văn thư, Thiết bị, Y tế, Thủ quỹ...).\n- Về chứng chỉ: Có chứng chỉ bồi dưỡng tiêu chuẩn chức danh nghề nghiệp viên chức theo quy định.\n- Về kỹ năng số: Sử dụng thành thạo máy vi tính, phần mềm quản lý giáo dục điện tử, ký số học bạ, khai thác công cụ AI hỗ trợ công việc.\n- Phẩm chất đạo đức: Mẫu mực, tâm huyết với sự nghiệp giáo dục vùng cao Phục Hòa.")
     ]
 
     r_idx = 6
@@ -977,7 +1045,8 @@ def create_full_vtvl_excel(output_paths):
     for p in output_paths:
         try:
             d = os.path.dirname(p)
-            if d: os.makedirs(d, exist_ok=True)
+            if d:
+                os.makedirs(d, exist_ok=True)
             wb.save(p)
             print(f"[OK] Đã lưu file thành công: {p}")
         except Exception as e:
@@ -988,6 +1057,19 @@ if __name__ == "__main__":
     local_excel_alt = "Bang-mo-ta-VTVL-TTCM-TPCM-THPT-Phuc-Hoa.xlsx"
     desktop_excel_1 = r"D:\Desktop\Bang-mo-ta-De-an-VTVL-THPT-Phuc-Hoa-ND232-2026.xlsx"
     desktop_excel_2 = r"D:\Desktop\Bang-mo-ta-VTVL-TTCM-TPCM-THPT-Phuc-Hoa.xlsx"
+    download_excel_1 = r"D:\Downloads\Bang-mo-ta-De-an-VTVL-THPT-Phuc-Hoa-ND232-2026 (1) Nhóm QL; CM nghiệp vụ; việc làm hỗ trợ.xlsx"
+    download_excel_2 = r"D:\Downloads\Bang-mo-ta-De-an-VTVL-THPT-Phuc-Hoa-ND232-2026.xlsx"
+    download_excel_3 = r"D:\Downloads\07.10.2026 Bang-mo-ta-De-an-VTVL-THPT-Phuc-Hoa-ND232-2026 (1).xlsx"
+    download_excel_4 = r"D:\Downloads\Bang-mo-ta-De-an-VTVL-THPT-Phuc-Hoa-ND232-2026 (1).xlsx"
     
-    paths = [local_excel_name, local_excel_alt, desktop_excel_1, desktop_excel_2]
+    paths = [
+        local_excel_name, 
+        local_excel_alt, 
+        desktop_excel_1, 
+        desktop_excel_2,
+        download_excel_1,
+        download_excel_2,
+        download_excel_3,
+        download_excel_4
+    ]
     create_full_vtvl_excel(paths)
