@@ -58,10 +58,13 @@
       </div>
 
       <nav class="hero-nav">
-        <a href="#bang-tong-hop" class="nav-btn nav-primary" id="btn-hero-master">
+        <a href="#ban-mo-ta-chuan" class="nav-btn nav-primary" id="btn-hero-docmau" style="background: linear-gradient(135deg, #0284c7, #2563eb); color: #fff;">
+          <span class="nav-icon">📜</span> Bản Mô Tả Chuẩn Mẫu NĐ 232
+        </a>
+        <a href="#bang-tong-hop" class="nav-btn nav-secondary" id="btn-hero-master">
           <span class="nav-icon">📋</span> Bảng Phụ Lục I (35 Biên Chế)
         </a>
-        <a href="#cat-dm1" class="nav-btn nav-secondary" id="btn-hero-cat1">
+        <a href="#cat-dm1" class="nav-btn nav-outline" id="btn-hero-cat1">
           <span class="nav-icon">🏛️</span> 1. Quản lý (07 người)
         </a>
         <a href="#cat-dm2" class="nav-btn nav-outline" id="btn-hero-cat2">
@@ -69,12 +72,6 @@
         </a>
         <a href="#cat-dm3" class="nav-btn nav-outline" id="btn-hero-cat3">
           <span class="nav-icon">🛠️</span> 3. Hỗ trợ (06 người)
-        </a>
-        <a href="#khung-nang-luc" class="nav-btn nav-outline" id="btn-hero-khnl">
-          <span class="nav-icon">📊</span> Khung năng lực
-        </a>
-        <a href="#kpi-section" class="nav-btn nav-outline" id="btn-hero-kpi">
-          <span class="nav-icon">📈</span> Bộ KPI đầu ra
         </a>
         <a href="Bang-mo-ta-De-an-VTVL-THPT-Phuc-Hoa-ND232-2026.xlsx" download="Bang-mo-ta-De-an-VTVL-THPT-Phuc-Hoa-ND232-2026.xlsx" class="nav-btn nav-excel" id="btn-excel-hero">
           <span class="nav-icon">📥</span> Tải Đề án Excel (.xlsx)
@@ -148,6 +145,7 @@
     <div class="container role-tabs-wrap">
       <div class="role-tabs">
         <button class="role-tab-btn active" data-filter="all">⚡ Tất cả 35 biên chế</button>
+        <button class="role-tab-btn" data-filter="doc-mau" style="border-color: #38bdf8; color: #38bdf8;">📜 Mẫu Bản mô tả NĐ 232</button>
         <button class="role-tab-btn" data-filter="master">📋 Bảng Phụ lục I</button>
         <button class="role-tab-btn" data-filter="dm1">🏛️ 1. Quản lý (07 người)</button>
         <button class="role-tab-btn" data-filter="dm2">🎓 2. Chuyên môn (13 môn - 22 GV)</button>
@@ -437,6 +435,74 @@
       </div>
     </div>
   </section>
+
+  <!-- ==============================================================================
+       KHU VỰC: BẢN MÔ TẢ CÔNG VIỆC VÀ KHUNG NĂNG LỰC THEO ĐÚNG GIỐNG MẪU NGHỊ ĐỊNH 232/2026/NĐ-CP
+       ============================================================================== -->
+  <section class="official-doc-section" id="ban-mo-ta-chuan" data-cat="doc-mau">
+    <div class="container">
+      <div class="category-header" style="background: linear-gradient(135deg, #1e3a8a, #0f172a); border-top: 4px solid #38bdf8;">
+        <div class="category-header-info">
+          <span class="dm-tag" style="background: #e0f2fe; color: #0284c7; border: 1px solid #7dd3fc;">📜 Phần B Phụ lục IV/VI – Nghị định số 232/2026/NĐ-CP</span>
+          <h3>BẢN MÔ TẢ CÔNG VIỆC VÀ KHUNG NĂNG LỰC VỊ TRÍ VIỆC LÀM (CHUẨN MẪU CÔNG VỤ)</h3>
+          <p>Mẫu chuẩn áp dụng thống nhất cho từng chức danh: 13 Môn học Chuyên môn, 06 Viên chức Hỗ trợ và Viên chức Quản lý.</p>
+        </div>
+        <div class="category-header-badge" style="color: #38bdf8; border-color: #38bdf8;">Đúng chuẩn mẫu công vụ A4</div>
+      </div>
+
+      <!-- Selector Bar -->
+      <div class="official-selector-bar">
+        <div class="selector-label">
+          <span>🎯</span> Chọn vị trí việc làm cần xem bản mô tả chuẩn:
+        </div>
+        <select id="docPositionSelect" class="position-select">
+          <optgroup label="🎓 13 MÔN HỌC CHUYÊN MÔN (22 GIÁO VIÊN)">
+            <option value="gv_van" selected>1. Giáo viên THPT môn Ngữ văn (03 người - Bậc 3 đến 4)</option>
+            <option value="gv_toan">2. Giáo viên THPT môn Toán (03 người - Bậc 3 đến 4)</option>
+            <option value="gv_anh">3. Giáo viên THPT môn Ngoại ngữ / Tiếng Anh (02 người - Bậc 3 đến 4)</option>
+            <option value="gv_su">4. Giáo viên THPT môn Lịch sử (02 người - Bậc 3 đến 4)</option>
+            <option value="gv_gdtc">5. Giáo viên THPT môn Giáo dục thể chất (02 người - Bậc 3 đến 4)</option>
+            <option value="gv_gdqp">6. Giáo viên THPT môn GDQP-AN (01 người - Bậc 3 đến 4)</option>
+            <option value="gv_dia">7. Giáo viên THPT môn Địa lí (02 người - Bậc 3 đến 4)</option>
+            <option value="gv_ktpl">8. Giáo viên THPT môn GD KT&PL (01 người - Bậc 3 đến 4)</option>
+            <option value="gv_ly">9. Giáo viên THPT môn Vật lí (01 người - Bậc 3 đến 4)</option>
+            <option value="gv_hoa">10. Giáo viên THPT môn Hóa học (01 người - Bậc 3 đến 4)</option>
+            <option value="gv_sinh">11. Giáo viên THPT môn Sinh học (01 người - Bậc 3 đến 4)</option>
+            <option value="gv_cn">12. Giáo viên THPT môn Công nghệ (02 người - Bậc 3 đến 4)</option>
+            <option value="gv_tin">13. Giáo viên THPT môn Tin học (01 người - Bậc 3 đến 4)</option>
+          </optgroup>
+          <optgroup label="🛠️ 06 VIÊN CHỨC HỖ TRỢ (06 NGƯỜI)">
+            <option value="ht_kt">1. Kế toán (01 người - KT-THPT-01 - Bậc 1 đến 4)</option>
+            <option value="ht_vt">2. Văn thư (01 người - VT-THPT-01 - Bậc 1 đến 4)</option>
+            <option value="ht_tbtn">3. Thiết bị, thí nghiệm (01 người - TBTN-THPT-01 - Bậc 2 đến 3)</option>
+            <option value="ht_gvu">4. Giáo vụ (01 người - GVU-THPT-01 - Bậc 2 đến 3)</option>
+            <option value="ht_yt">5. Y tế trường học (01 người - YT-THPT-01 - Bậc 1 đến 3)</option>
+            <option value="ht_tq">6. Thủ quỹ (01 người - TQ-THPT-01 - Bậc 1 đến 3)</option>
+          </optgroup>
+          <optgroup label="🏛️ VIÊN CHỨC QUẢN LÝ (07 NGƯỜI)">
+            <option value="ql_ht">1. Hiệu trưởng (01 người - HT-THPT-01 - Bậc 3 đến 5)</option>
+            <option value="ql_pht">2. Phó Hiệu trưởng (02 người - PHT-THPT-01 - Bậc 3 đến 5)</option>
+            <option value="ql_ttcm">3. Tổ trưởng chuyên môn (02 người - TTCM-THPT-01 - Bậc 3 đến 4)</option>
+            <option value="ql_tpcm">4. Tổ phó chuyên môn (02 người - TPCM-THPT-01 - Bậc 3 đến 4)</option>
+          </optgroup>
+        </select>
+        <div class="doc-action-btns">
+          <button class="btn-doc-print" id="btnPrintOfficialDoc" onclick="window.print()">
+            <span>🖨️</span> In / Lưu PDF Bản Mô Tả A4
+          </button>
+          <a href="Bang-mo-ta-De-an-VTVL-THPT-Phuc-Hoa-ND232-2026.xlsx" download="Bang-mo-ta-De-an-VTVL-THPT-Phuc-Hoa-ND232-2026.xlsx" class="btn-doc-print" style="background: linear-gradient(135deg, #10b981, #059669); text-decoration: none;">
+            <span>📥</span> Tải Excel (.xlsx)
+          </a>
+        </div>
+      </div>
+
+      <!-- Tờ giấy mô phỏng A4 chuẩn công vụ -->
+      <div class="doc-paper" id="officialDocPaper">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
 
   <!-- ==============================================================================
        DANH MỤC 1: VỊ TRÍ VIỆC LÀM VIÊN CHỨC QUẢN LÝ (07 NGƯỜI)
